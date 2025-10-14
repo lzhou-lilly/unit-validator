@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debug Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "purpose": [
+                "debug-test"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTEST_ADDOPTS": "--no-cov",
+                "PY_COLORS": "1"
+            },
+            "presentation": {
+                "hidden": true
+            },
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "justMyCode": false
+        },
+        {
+            "name": "Python Debug File",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "purpose": [
+                "debug-test"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTEST_ADDOPTS": "--no-cov",
+                "PY_COLORS": "1"
+            },
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "justMyCode": false
+        },
+    ]
+}

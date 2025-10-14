@@ -1,0 +1,27 @@
+name: Unit tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    concurrency:
+      group: test-${{ github.event_name}}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.13
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up
+        run: |
+          pip install uv
+          uv sync
+      
+      - name: Matrix test with tox
+        run: |
+          uv run tox -c tox.ci.ini

@@ -1,0 +1,23 @@
+name: Ruff
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ruff:
+    concurrency:
+      group: ruff-${{ github.event_name}}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.13
+    steps:
+      - uses: actions/checkout@v5
+      
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Run Ruff
+        run: ruff check .

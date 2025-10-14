@@ -1,0 +1,19 @@
+[build.targets.wheel]
+packages = ["python_library_template_2025"]
+include = [
+    "python_library_template_2025"
+]
+exclude = [
+    "**/tests",
+    "**/test_*.py",
+]
+
+[build.targets.sdist]
+packages = ["python_library_template_2025"]
+include = [
+    "python_library_template_2025"
+]
+exclude = [
+    "**/tests",
+    "**/test_*.py",
+]
