@@ -1,15 +1,16 @@
 [project]
-name = "python-library-template-2025"
+name = "unit-standardizer"
 version = "0.1.0"
 description = "entity traversal based on benchling schema"
 readme = "README.md"
 requires-python = ">=3.10"
-packages=["python_library_template_2025"]
+packages=["unit_standardizer"]
 dependencies = [
+    "antlr4-python3-runtime>=4.13.2",
 ]
 
 [project.scripts]
-python-library-template-2025 = "python_library_template_2025.run:main"
+unit-standardizer = "unit_standardizer.run:main"
 
 [dependency-groups]
 dev = [
@@ -23,6 +24,7 @@ dev = [
     "python-dotenv>=1.1.1",
     "pytest-mock>=3.15.0",
     "ipywidgets>=8.1.7",
+    "antlr4-tools>=0.2.2",
 ]
 
 [build-system]

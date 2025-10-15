@@ -10,6 +10,6 @@ echo -e "${BOLD}Running ruff check...${RESET}"
 uv run ruff check --fix
 
 echo -e "${BOLD}Running mypy...${RESET}"
-uv run mypy
+uv run mypy .
 
 echo -e "${BOLD}All checks passed!${RESET}"

@@ -15,3 +15,6 @@ build:
 
 install-certs:
 	./dev-scripts/install-certs.sh
+
+compile-antlr4:
+	./dev-scripts/compile-antlr4.sh

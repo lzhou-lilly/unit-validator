@@ -1,5 +1,5 @@
 {
-  "name": "python-library-template-2025",
+  "name": "unit-standardizer",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -19,6 +19,6 @@
       ]
     }
   },
-  "workspaceFolder": "/workspaces/python-library-template-2025",
+  "workspaceFolder": "/workspaces/unit-standardizer",
   "postCreateCommand": ".devcontainer/postCreateCommand.sh"
 }

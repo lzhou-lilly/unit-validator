@@ -1,7 +1,7 @@
 [build.targets.wheel]
-packages = ["python_library_template_2025"]
+packages = ["unit_standardizer"]
 include = [
-    "python_library_template_2025"
+    "unit_standardizer"
 ]
 exclude = [
     "**/tests",
@@ -9,9 +9,9 @@ exclude = [
 ]
 
 [build.targets.sdist]
-packages = ["python_library_template_2025"]
+packages = ["unit_standardizer"]
 include = [
-    "python_library_template_2025"
+    "unit_standardizer"
 ]
 exclude = [
     "**/tests",

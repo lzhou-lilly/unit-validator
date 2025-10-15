@@ -1,0 +1,10 @@
+LEFT_BR=1
+RIGHT_BR=2
+POWER_OP=3
+PER_OP=4
+NUMBER=5
+UNIT=6
+WS=7
+'('=1
+')'=2
+'^'=3

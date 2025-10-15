@@ -27,6 +27,7 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    "unit_lang/",
 ]
 
 # Same as Black.
@@ -42,7 +43,7 @@ select = ["ALL"]
 # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
 # McCabe complexity (`C901`) by default.
 # select = ["E4", "E7", "E9", "F"]
-ignore = ["B008", "PLR0913", "D203", "D213", "FIX002", "S101", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "EM101", "EM102", "TRY003", "RUF022", "TD003", "COM", "PGH004", "PD901"]
+ignore = ["B008", "PLR0913", "D203", "D213", "FIX002", "S101", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "EM101", "EM102", "TRY003", "RUF022", "TD003", "COM", "PGH004"]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
