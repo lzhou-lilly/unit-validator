@@ -6,11 +6,13 @@ from unit_lang.UnitLangParser import UnitLangParser
 
 
 class UnitStandardizer:
-    def __init__(self, base_units: list[dict[str, float | int]]) -> None:
-        self.units = base_units
+    def __init__(self, units: list[dict[str, float | int]]) -> None:
+        self.units = units
+        self._validate_unit_uniqueness(units)
 
     @cached_property
     def unit_to_base_unit_map(self) -> dict[str, tuple[float | int, str]]:
+        # build unit_to_base_unit_map
         unit_to_base_unit_map: dict[str, tuple[float | int, str]] = {}
         for base_unit_group in self.units:
             base_unit = None
@@ -39,6 +41,18 @@ class UnitStandardizer:
         factor, unit_power_counter = self._process_subtree(expr_ctx)
         # Construct the standardized unit string
         return (factor, self._compose_standard_unit(unit_power_counter))
+
+    ##########
+    # helpers
+    ##########
+    def _validate_unit_uniqueness(self, units: list[dict[str, float | int]]) -> None:
+        # check unit uniqueness across groups
+        unit_set = set()
+        for base_unit_group in units:
+            for unit in base_unit_group:
+                if unit in unit_set:
+                    raise ValueError(f"Duplicated unit found: {unit}")
+                unit_set.add(unit)
 
     def _process_subtree(  # noqa: C901
         self, ctx: UnitLangParser.ExprContext
