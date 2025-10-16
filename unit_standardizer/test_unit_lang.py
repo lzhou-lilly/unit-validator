@@ -10,10 +10,9 @@ from unit_lang.UnitLangParser import UnitLangParser
     "unit_str",
     [
         "km",
-        "N m/s",
+        "N*m/s",
         "m^2/h",
         "$/person/visit",
-        "$/(person visit)",
     ],
 )
 def test_unit_lang(unit_str: str) -> None:

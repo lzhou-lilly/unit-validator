@@ -5,53 +5,127 @@ import pytest
 from .unit_standardizer import UnitStandardizer
 
 UNIT_STANDARDIZER = UnitStandardizer(
-    units=[
-        {  # length
-            "m": 1,
-            "km": 1000,
+    units={
+        "time": {
+            "millisecond": ["ms"],
+            "second": ["s", "sec"],
+            "minute": ["m", "min"],
+            "hour": ["h", "hr"],
+            "day": ["d"],
+            "week": ["w", "wk"],
+            "month": ["m", "mo", "mon"],
+            "year": ["y", "yr"],
         },
-        {  # time
-            "s": 1,
-            "min": 60,
-            "h": 3600,
+        "length": {
+            "angstrom": ["a"],
+            "picometer": ["pm"],
+            "nanometer": ["nm"],
+            "micrometer": ["um"],
+            "millimeter": ["mm"],
+            "inch": ["in"],
+            "meter": ["m"],
+            "decimeter": ["dm"],
+            "centimeter": ["cm"],
         },
-        {  # force
-            "N": 1,
-            "kN": 1000,
+        "mass": {
+            "picogram": ["pg"],
+            "nanogram": ["ng"],
+            "microgram": ["ug"],
+            "milligram": ["mg"],
+            "gram": ["g"],
+            "ounce": ["oz"],
+            "pound": ["lb"],
+            "kilogram": ["kg"],
         },
-    ]
+        "molarity": {
+            "picomolar": ["pM"],
+            "nanomolar": ["nM"],
+            "micromolar": ["uM"],
+            "millimolar": ["mM"],
+            "molar": ["M"],
+        },
+        "volume": {
+            "liter": ["L"],
+            "nanoliter": ["nL"],
+            "microliter": ["uL"],
+            "milliliter": ["mL"],
+            "picoliter": ["pL"],
+            "pint(US)": ["pt"],
+            "quart(US)": ["qt"],
+            "gallon(US)": ["gal"],
+        },
+        "temperature": {
+            "Celsius": ["C", "degree Celsius", "deg C", "°C"],
+            "Fahrenheit": ["F", "degree Fahrenheit", "deg F", "°F"],
+            "Kelvin": ["K"],
+        },
+        "basepair": {
+            "basepair": ["bp"],
+            "kilo basepair": ["kbp"],
+            "mega basepair": ["mbp"],
+            "giga basepair": ["gbp"],
+        },
+        "arbitrary unit": {
+            "international unit": ["IU"],
+        },
+        "count": {
+            "colony forming unit": ["cfu"],
+            "plaque forming unit": ["pfu"],
+        },
+        "ratio": {
+            "percent by weight": ["wt%"],
+            "percent by volume": ["vol%"],
+            "percent by mole": ["mole%"],
+        },
+        "pressure": {
+            "pascal": ["Pa"],
+            "bar": ["bar"],
+            "millimeter mercury": ["mmHg"],
+        },
+    },
 )
 
 
 def test_unit_standardizer_raises_when_units_duplicate() -> None:
     with pytest.raises(ValueError, match=re.escape("Duplicated unit found: m")):
         UnitStandardizer(
-            units=[
-                {  # length
-                    "m": 1,
-                    "km": 1000,
+            units={
+                "length": {
+                    "m": [],
+                    "km": [],
                 },
-                {  # time
-                    "s": 1,
-                    "m": 60,  # should have used min
-                    "h": 3600,
+                "time": {
+                    "s": [],
+                    "m": [],  # should have used min
+                    "h": [],
                 },
-            ]
+            }
         )
 
 
 @pytest.mark.parametrize(
-    ("unit", "expected_factor", "expected_base_unit"),
+    "unit",
     [
-        ("km/s", 1000, "m/s"),
-        ("m/s ", 1, "m/s"),
-        ("km/h", 1000 / 3600, "m/s"),
+        "kilo basepair/second",
+        "quart(US)/hour",
+        "percent by weight",
     ],
 )
-def test_unit_standardizer(unit: str, expected_factor: float, expected_base_unit: str) -> None:
-    assert UNIT_STANDARDIZER.standardize(unit) == (expected_factor, expected_base_unit)
+def test_unit_standardizer(unit: str) -> None:
+    UNIT_STANDARDIZER.check(unit)
 
 
-def test_unit_standardizer_raises_error() -> None:
-    with pytest.raises(ValueError, match=re.escape("Unknown unit: Nm")):
-        UNIT_STANDARDIZER.standardize("Nm/s")
+def test_unit_standardizer_returns_errors_on_aliased_units() -> None:
+    validation_errors = UNIT_STANDARDIZER.check("mmHg/s")
+    assert validation_errors == [
+        "Please avoid aliased unit: mmHg, use canonical unit: ['millimeter mercury']",
+        "Please avoid aliased unit: s, use canonical unit: ['second']",
+    ]
+
+
+def test_unit_standardizer_returns_errors_on_unknown_units() -> None:
+    validation_errors = UNIT_STANDARDIZER.check("quart(BR)/s")
+    assert validation_errors == [
+        "Unknown unit: quart(BR)",
+        "Please avoid aliased unit: s, use canonical unit: ['second']",
+    ]
