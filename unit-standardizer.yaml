@@ -1,0 +1,67 @@
+
+units:
+    time:
+        millisecond: ["ms"]
+        second: ["s", "sec"]
+        minute: ["m", "min"]
+        hour: ["h", "hr"]
+        day: ["d"]
+        week: ["w", "wk"]
+        month: ["m", "mo", "mon"]
+        year: ["y", "yr"]
+    length:
+        angstrom: ["a"]
+        picometer: ["pm"]
+        nanometer: ["nm"]
+        micrometer: ["um", "micron"]
+        millimeter: ["mm"]
+        inch: ["in"]
+        meter: ["m"]
+        decimeter: ["dm"]
+        centimeter: ["cm"]
+    mass:
+        picogram: ["pg"]
+        nanogram: ["ng"]
+        microgram: ["ug"]
+        milligram: ["mg"]
+        gram: ["g"]
+        ounce: ["oz"]
+        pound: ["lb"]
+        kilogram: ["kg"]
+    molarity:
+        picomole: ["pM"]
+        nanomole: ["nM"]
+        micromole: ["uM"]
+        millimole: ["mM"]
+        mole: ["M", "molar"]
+    volume:
+        liter: ["L"]
+        nanoliter: ["nL"]
+        microliter: ["uL"]
+        milliliter: ["mL"]
+        picoliter: ["pL"]
+        pint (US): ["pt"]
+        quart (US): ["qt"]
+        gallon (US): ["gal"]
+    temperature:
+        Celsius: ["C", "degree Celsius", "deg C", "°C"]
+        Fahrenheit: ["F", "degree Fahrenheit", "deg F", "°F"]
+        Kelvin: ["K"]
+    basepair:
+        basepair: ["bp"]
+        kilo basepair: ["kbp"]
+        mega basepair: ["mbp"]
+        giga basepair: ["gbp"]
+    arbitrary unit:
+        international unit: ["IU"]
+    count:
+        colony forming unit: ["cfu"]
+        plaque forming unit: ["pfu"]
+    ratio:
+        percent by weight: ["wt%"]
+        percent by volume: ["vol%"]
+        percent by mole: ["mole%"]
+    pressure: 
+        pascal: ["Pa"]
+        bar: ["bar"]
+        millimeter mercury: ["mmHg"]

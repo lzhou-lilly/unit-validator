@@ -16,8 +16,8 @@ class ConfigModel(BaseModel):
 def load_config(yaml_path: Path) -> ConfigModel:
     """Load units configuration from YAML file."""
     config = yaml.safe_load(yaml_path.open("r"))
-    ConfigModel.model_validate(config)
-    return config
+    config_model = ConfigModel.model_validate(config)
+    return config_model
 
 
 def process_tsv(txt_path: Path, tsv_path: Path, config: ConfigModel) -> None:
@@ -48,11 +48,14 @@ def process_tsv(txt_path: Path, tsv_path: Path, config: ConfigModel) -> None:
             if not unit:
                 pass
             else:
-                errors = unit_standardizer.check(unit)
-                if errors:
-                    row["unit_validation_errors"] = "; ".join(errors)
-                else:
-                    row["unit_validation_errors"] = "✅ "
+                try:
+                    errors = unit_standardizer.check(unit)
+                    if errors:
+                        row["unit_validation_errors"] = "; ".join(errors)
+                    else:
+                        row["unit_validation_errors"] = "✅ All is good"
+                except Exception:  # noqa: BLE001
+                    row["unit_validation_errors"] = "⛔ Parse Error"
             writer.writerow(row)
 
 
@@ -65,8 +68,8 @@ def main() -> None:
         "-c",
         "--config",
         type=Path,
-        default=Path("units.yaml"),
-        help="Path to YAML configuration file (default: units.yaml)",
+        default=Path("unit-standardizer.yaml"),
+        help="Path to YAML configuration file (default: unit-standardizer.yaml)",
     )
 
     args = parser.parse_args()

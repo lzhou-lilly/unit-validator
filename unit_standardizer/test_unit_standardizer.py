@@ -112,20 +112,21 @@ def test_unit_standardizer_raises_when_units_duplicate() -> None:
     ],
 )
 def test_unit_standardizer(unit: str) -> None:
-    UNIT_STANDARDIZER.check(unit)
+    validation_errors = UNIT_STANDARDIZER.check(unit)
+    assert validation_errors == []
 
 
 def test_unit_standardizer_returns_errors_on_aliased_units() -> None:
     validation_errors = UNIT_STANDARDIZER.check("mmHg/s")
     assert validation_errors == [
-        "Please avoid aliased unit: mmHg, use canonical unit: ['millimeter mercury']",
-        "Please avoid aliased unit: s, use canonical unit: ['second']",
+        "⚠️ Aliased unit: mmHg ['millimeter mercury']",
+        "⚠️ Aliased unit: s ['second']",
     ]
 
 
 def test_unit_standardizer_returns_errors_on_unknown_units() -> None:
     validation_errors = UNIT_STANDARDIZER.check("quart(BR)/s")
     assert validation_errors == [
-        "Unknown unit: quart(BR)",
-        "Please avoid aliased unit: s, use canonical unit: ['second']",
+        "❓ Unknown unit: quart(BR)",
+        "⚠️ Aliased unit: s ['second']",
     ]

@@ -24,7 +24,7 @@ NUMBER
     ;
 
 UNIT
-    : [a-zA-Z_][a-zA-Z_0-9() ]*[a-zA-Z_0-9()]  // Multi-char unit with spaces
+    : [a-zA-Z_][a-zA-Z_0-9\-() ]*[a-zA-Z_0-9\-()]  // Multi-char unit with spaces
     | [a-zA-Z_]                            // Single char unit
     ;
 

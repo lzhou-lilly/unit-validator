@@ -62,11 +62,10 @@ class UnitStandardizer:
             if unit_text not in self.unit_set:
                 if unit_text in self.alias_to_canonical_unit_map:
                     validation_errors.append(
-                        f"Please avoid aliased unit: {unit_text},"
-                        f" use canonical unit: {self.alias_to_canonical_unit_map[unit_text]}"
+                        f"⚠️ Aliased unit: {unit_text} {self.alias_to_canonical_unit_map[unit_text]}"
                     )
                 else:
-                    validation_errors.append(f"Unknown unit: {unit_text}")
+                    validation_errors.append(f"❓ Unknown unit: {unit_text}")
 
         # Multiplication: expr * expr (when no PER_OP and multiple expr)
         elif isinstance(ctx, UnitLangParser.Mul_exprContext):  # noqa: SIM114

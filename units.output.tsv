@@ -1,0 +1,110 @@
+original	unit	unit_validation_errors
+micron	micron	⚠️ Aliased unit: micron ['micrometer']
+inch	inch	✅ All is good
+meter	meter	✅ All is good
+angstrom	angstrom	✅ All is good
+decimeter	decimeter	✅ All is good
+centimeter	centimeter	✅ All is good
+millimeter	millimeter	✅ All is good
+micrometer	micrometer	✅ All is good
+nanometer	nanometer	✅ All is good
+picometer	picometer	✅ All is good
+kilogram	kilogram	✅ All is good
+picogram	picogram	✅ All is good
+nanogram	nanogram	✅ All is good
+microgram	microgram	✅ All is good
+milligram	milligram	✅ All is good
+gram	gram	✅ All is good
+ounce	ounce	✅ All is good
+pound	pound	✅ All is good
+mole	mole	✅ All is good
+picomole	picomole	✅ All is good
+nanomole	nanomole	✅ All is good
+micromole	micromole	✅ All is good
+millimole	millimole	✅ All is good
+picomolar	picomolar	❓ Unknown unit: picomolar
+nanomolar	nanomolar	❓ Unknown unit: nanomolar
+micromolar	micromolar	❓ Unknown unit: micromolar
+millimolar	millimolar	❓ Unknown unit: millimolar
+Molar	Molar	❓ Unknown unit: Molar
+liter	liter	✅ All is good
+nanoliter	nanoliter	✅ All is good
+microliter	microliter	✅ All is good
+milliliter	milliliter	✅ All is good
+picoliter	picoliter	✅ All is good
+pint (US)	pint (US)	✅ All is good
+quart (US)	quart (US)	✅ All is good
+gallon (US)	gallon (US)	✅ All is good
+milligrams per liter	milligram/liter	✅ All is good
+milligrams per milliliter	milligram/milliliter	✅ All is good
+nanograms per liter	nanogram/liter	✅ All is good
+nanograms per milliliter	nanogram/milliliter	✅ All is good
+micrograms per liter	microgram/liter	✅ All is good
+micrograms per milliliter	microgram/milliliter	✅ All is good
+grams per milliliter	gram/milliliter	✅ All is good
+grams per liter	gram/liter	✅ All is good
+base pair	basepair	✅ All is good
+kilo base pair	kilo basepair	✅ All is good
+mega base pair	mega basepair	✅ All is good
+giga base pair	giga basepair	✅ All is good
+pascal	pascal	✅ All is good
+pound per square inch	pound per square inch	❓ Unknown unit: pound per square inch
+bar	bar	✅ All is good
+millimeter mercury	millimeter mercury	✅ All is good
+Square Angstroms	Square Angstroms	❓ Unknown unit: Square Angstroms
+square meter	square meter	❓ Unknown unit: square meter
+hour	hour	✅ All is good
+millisecond	millisecond	✅ All is good
+day	day	✅ All is good
+year	year	✅ All is good
+week	week	✅ All is good
+second	second	✅ All is good
+minute	minute	✅ All is good
+percent by volume	percent by volume	✅ All is good
+purity by volume	purity by volume	❓ Unknown unit: purity by volume
+millimole/liter	millimole/liter	✅ All is good
+nanomole/liter	nanomole/liter	✅ All is good
+micromoles per Liter	micromoles per Liter	❓ Unknown unit: micromoles per Liter
+microliter/hour	microliter/hour	✅ All is good
+milliliter/second	milliliter/second	✅ All is good
+purity by weight	purity by weight	❓ Unknown unit: purity by weight
+percent by weight	percent by weight	✅ All is good
+milligram/kilogram	milligram/kilogram	✅ All is good
+milligram/gram	milligram/gram	✅ All is good
+microgram/gram	microgram/gram	✅ All is good
+microgram/kilogram	microgram/kilogram	✅ All is good
+gram/kilogram	gram/kilogram	✅ All is good
+weight percent	weight percent	❓ Unknown unit: weight percent
+milligram/deciliter	milligram/deciliter	❓ Unknown unit: deciliter
+milligram/cubic meter	milligram/cubic meter	❓ Unknown unit: cubic meter
+microgram/liter	microgram/liter	✅ All is good
+vg per iu	vg per iu	❓ Unknown unit: vg per iu
+degrees Celsius	degrees Celsius	❓ Unknown unit: degrees Celsius
+Absorbance Units	Absorbance Units	❓ Unknown unit: Absorbance Units
+Milli Absorbance Units	Milli Absorbance Units	❓ Unknown unit: Milli Absorbance Units
+Absorbance Units Seconds	Absorbance Units Seconds	❓ Unknown unit: Absorbance Units Seconds
+Milli Absorbance Units Seconds	Milli Absorbance Units Seconds	❓ Unknown unit: Milli Absorbance Units Seconds
+kilodalton	kilodalton	❓ Unknown unit: kilodalton
+extinction coefficient	extinction coefficient	❓ Unknown unit: extinction coefficient
+cells per milliliter	cells per milliliter	❓ Unknown unit: cells per milliliter
+Plaque-Forming Units per milliliter	Plaque-Forming Units per milliliter	❓ Unknown unit: Plaque-Forming Units per milliliter
+Colony-Forming Units per milliliter	Colony-Forming Units per milliliter	❓ Unknown unit: Colony-Forming Units per milliliter
+enzyme units per milliliter	enzyme units per milliliter	❓ Unknown unit: enzyme units per milliliter
+vector genome per milliliter	vector genome per milliliter	❓ Unknown unit: vector genome per milliliter
+Infectious units per milliliter	Infectious units per milliliter	❓ Unknown unit: Infectious units per milliliter
+Transducing Units per milliliter	Transducing Units per milliliter	❓ Unknown unit: Transducing Units per milliliter
+TCID50 per milliliter	TCID50 per milliliter	❓ Unknown unit: TCID50 per milliliter
+viral particles per milliliter	viral particles per milliliter	❓ Unknown unit: viral particles per milliliter
+genome copies per milliliter	genome copies per milliliter	❓ Unknown unit: genome copies per milliliter
+optical density per milliliter	optical density per milliliter	❓ Unknown unit: optical density per milliliter
+beads per milliliter	beads per milliliter	❓ Unknown unit: beads per milliliter
+particles per milliliter	particles per milliliter	❓ Unknown unit: particles per milliliter
+molecules per milliliter	molecules per milliliter	❓ Unknown unit: molecules per milliliter
+Capsids per milliliter	Capsids per milliliter	❓ Unknown unit: Capsids per milliliter
+lipid particles per milliliter	lipid particles per milliliter	❓ Unknown unit: lipid particles per milliliter
+kilograms per liter	kilograms per liter	❓ Unknown unit: kilograms per liter
+cells per liter	cells per liter	❓ Unknown unit: cells per liter
+viral particles per liter	viral particles per liter	❓ Unknown unit: viral particles per liter
+cells per square centimeter	cells per square centimeter	❓ Unknown unit: cells per square centimeter
+micromole per gram	micromole per gram	❓ Unknown unit: micromole per gram
+cells per vial	cells per vial	❓ Unknown unit: cells per vial
